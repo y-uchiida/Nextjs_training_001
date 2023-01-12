@@ -7,15 +7,13 @@ import { Channel } from "@/types/Channel";
 export const SideBar = () => {
 	const channels = useChannels();
 
-	console.log(channels);
-
 	return (
 		<div className={styles.body}>
 			<SideBarHeader />
 			<ul>
 				{channels.map(channel => (
 					<li key={channel.id} className={styles.channelTitle}>
-						<Link href={`channels/${channel.id}`}>
+						<Link href={`/channels/${channel.id}`}>
 							<span>{channel.title}</span>
 						</Link>
 					</li>

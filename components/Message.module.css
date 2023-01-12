@@ -1,0 +1,28 @@
+.body {
+  display: flex;
+  background-color: white;
+  margin-bottom: 10px;
+  max-width: 600px;
+  color: black;
+}
+
+.left {
+  width: 70px;
+}
+
+.header {
+  height: 32px;
+  font-weight: bold;
+}
+
+.profile-image {
+  width: 60px;
+  height: 60px;
+}
+
+.profile-image img {
+  border-radius: 12px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
