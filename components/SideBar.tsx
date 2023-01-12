@@ -15,7 +15,7 @@ export const SideBar = () => {
 				{channels.map(channel => (
 					<li key={channel.id} className={styles.channelTitle}>
 						<Link href={`channels/${channel.id}`}>
-							<a>{channel.title}</a>
+							<span>{channel.title}</span>
 						</Link>
 					</li>
 				))}
