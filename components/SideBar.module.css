@@ -1,0 +1,11 @@
+.body {
+  background-color: black;
+  color: white;
+}
+
+.channelTitle {
+  display: flex;
+  align-items: center;
+  padding: 8px 20px;
+  color: gray;
+}
