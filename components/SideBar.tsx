@@ -1,13 +1,14 @@
 import styles from "@/components/SideBar.module.css";
+import { useChannels } from "@/hooks/useChannels";
 import Link from "next/link";
-import { title } from "process";
 import { SideBarHeader } from "./SideBarHeader";
+import { Channel } from "@/types/Channel";
 
 export const SideBar = () => {
-	const channels: Channel[] = [
-		{ id: 1, title: "channel 1" },
-		{ id: 2, title: "channel 2" },
-	];
+	const channels = useChannels();
+
+	console.log(channels);
+
 	return (
 		<div className={styles.body}>
 			<SideBarHeader />
