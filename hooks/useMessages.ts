@@ -1,10 +1,26 @@
 import { Message } from "@/types/Message";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useAxios } from "./useAxios";
 
 export const useMessages = () => {
 	const { axios } = useAxios();
 	const [messages, setMessages] = useState<Message[]>([]);
+
+	const postMessage = async (message: Message) => {
+		try {
+			await axios.post<Message>(
+				"messages.json",
+				JSON.stringify({ ...message }),
+			);
+			setMessages((current) => {
+				current.push(message);
+				return current;
+			});
+		} catch (e) {
+			console.error('error', e);
+			return;
+		}
+	}
 
 	const fetchMessages = async (channelId: string) => {
 		const response = await axios.get<Message[]>("messages.json");
@@ -13,5 +29,5 @@ export const useMessages = () => {
 		setMessages(messagesForChannel);
 	}
 
-	return { fetchMessages, messages };
+	return { fetchMessages, postMessage, messages };
 };

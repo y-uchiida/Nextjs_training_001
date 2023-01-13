@@ -1,4 +1,5 @@
 import { MessageTimeLine } from "@/components/MessageTimeLine";
+import { SendMessageBox } from "@/components/SendMessageBox";
 import { useChannels } from "@/hooks/useChannels";
 import { useMessages } from "@/hooks/useMessages";
 import styles from "@/pages/channels/ChannelPage.module.css";
@@ -23,7 +24,7 @@ export const ChannelPage = () => {
 				<h2>{channel?.title}</h2>
 			</div>
 			<MessageTimeLine messages={messages} />
-			<div>send message</div>
+			<SendMessageBox />
 		</div>
 	)
 }

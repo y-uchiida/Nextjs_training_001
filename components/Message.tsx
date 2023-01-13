@@ -8,10 +8,7 @@ type Props = {
 }
 
 export const Message = ({ message }: Props) => {
-	console.log(message);
-
 	const { user } = useAuth();
-	console.log(user);
 
 	return (
 		<>
